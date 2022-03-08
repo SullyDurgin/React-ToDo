@@ -2,12 +2,17 @@ import React, { useState } from 'react'
 import TodoList from './TodoList'
 
 function App() {
-  const [todos, setTodos] = useState([{ id: 1, name: 'Todo 1', complete: false}])
+  const [todos, setTodos] = useState([])
+
+  function handleAddTodo(e) {
+    
+  }
+
 	return (
     <>
      <TodoList todos={todos} />
      <input type="text" />
-     <button>Add Task</button>
+     <button onClick={handleAddTodo}>Add Task</button>
      <button>Clear Completed Tasks</button>
      <div>0 Tasks Left To Do</div>
     </>

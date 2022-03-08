@@ -9,8 +9,20 @@ function App() {
   const todoNameRef = useRef()
 
   useEffect(() => {
+    const storedTodos = JSON.parse (localStorage.getItem(LOCAL_STORAGE_KEY))
+    if (storedTodos) setTodos(storedTodos)
+  }, [])//this effect loads todos that are stored in local storage 
+
+  useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
   }, [todos]) //this effect stores our todos but will not load them, you need another effect for that
+
+  function toggleTodo(id) {
+    const newTodos = [...todos] //this way you dont directly modify a state variable and instead you are modifying a copy, use that copy to set the new state
+    const todo = newTodos.find(todo => todo.id === id)
+    todo.complete = !todo.complete
+    setTodos(newTodos)
+  }
 
   function handleAddTodo(e) {
     const name = todoNameRef.current.value

@@ -35,11 +35,11 @@ function App() {
 
 	return (
     <>
-     <TodoList todos={todos} />
+     <TodoList todos={todos}  toggleTodo={toggleTodo}/>
      <input ref={todoNameRef} type="text" />
      <button onClick={handleAddTodo}>Add Task</button>
      <button>Clear Completed Tasks</button>
-     <div>0 Tasks Left To Do</div>
+     <div>{todos.filter(todo => !todo.complete).length} left to do</div>
     </>
   )
 }

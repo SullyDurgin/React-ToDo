@@ -6,6 +6,8 @@ function App() {
     <>
      <TodoList />
      <input type="text" />
+     <button>Add Task</button>
+     <button>Clear Completed Tasks</button>
     </>
   )
 }

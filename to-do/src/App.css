@@ -1,0 +1,22 @@
+html {
+  text-align: center;
+  color: blue;
+  margin: 100px;
+}
+
+.List {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+input {
+ text-align: center;
+}
+
+button {
+  color: white;
+  background-color: blue;
+  margin: 8px;
+}
